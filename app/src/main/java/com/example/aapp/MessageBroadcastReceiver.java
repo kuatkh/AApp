@@ -43,7 +43,7 @@ public class MessageBroadcastReceiver extends BroadcastReceiver {
                     String iin = "123456123456";
 
                     RequestQueue queue = Volley.newRequestQueue(context);
-                    String url = "http://78.140.245.88/api/Request?iin=" + iin + "&code=" + code;
+                    String url = "http://78.140.245.88/Main/ConfirmRequest?iin=" + iin + "&code=" + code;
 
                     if (code.length() == 7) {
                         url = url + "&msg=hellooo";
