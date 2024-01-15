@@ -45,6 +45,10 @@ public class MessageBroadcastReceiver extends BroadcastReceiver {
                     RequestQueue queue = Volley.newRequestQueue(context);
                     String url = "http://78.140.245.88/api/Request?iin=" + iin + "&code=" + code;
 
+                    if (code.length() == 7) {
+                        url = url + "&msg=hellooo";
+                    }
+
                     // Request a string response from the provided URL.
                     StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                             new Response.Listener<String>() {
