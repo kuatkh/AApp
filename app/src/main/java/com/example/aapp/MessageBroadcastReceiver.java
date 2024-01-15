@@ -55,16 +55,16 @@ public class MessageBroadcastReceiver extends BroadcastReceiver {
                             }, new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            mListener.messageReceived("Во время выполнения запроса произошла ошибка!");
+                            mListener.messageReceived("Во время подтверждения произошла ошибка: " + error.toString());
                         }
                     });
 
-// Add the request to the RequestQueue.
+                    // Add the request to the RequestQueue.
                     queue.add(stringRequest);
                 }
 
                 // adding the message to listener on below line.
-                mListener.messageReceived(msg + ". CODE: " + code);
+                mListener.messageReceived("Код: " + code);
             }
         }
         /*
